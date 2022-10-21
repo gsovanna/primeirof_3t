@@ -28,20 +28,43 @@ function mostraTabuada(){
         document.write("O valor do i " + i + "<br>");
     }
 }
+function moeda(atual){
+    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+}
 function total(){
     let v = document.getElementById("valor").value;
     let j = document.getElementById("juros").value;
     let t = document.getElementById("meses").value;
+    if (!Number(v)){
+        alert("O campo valor deve ser números");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+    }
+    if(!Number(j)) {
+        alert("O campo messes deve ser números");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+    }
+    if(!Number(t)) {
+        alert("O campo tempo deve ser numérico");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+
+    }
+    
     let r = 0;
     for(let i =1; i <=t; i++){
         r = v * (1 + (j/100));
         document.write("Mes " + i + " - valor: " + r + "<br>");
         v = r;
     }
-    document.write("Resultado: " + r);
+    document.write("Resultado: " + moeda(r));
 }
 
-function RosaVermelha
+function média
     let n1 = document.getElementById("b1").value;
     let n2 = document.getElementById("b2").value;
     let n3 = document.getElementById("b3").value;
