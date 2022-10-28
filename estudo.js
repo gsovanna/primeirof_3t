@@ -56,13 +56,15 @@ function total(){
     }
     
     let r = 0;
+    let text = ""
     for(let i =1; i <=t; i++){
         r = v * (1 + (j/100));
-        document.write("Mes " + i + " - valor: " + r + "<br>");
+       // document.write("Mes " + i + " - valor: " + r + "<br>");
+       texto += "Mês" + i + "- velor" + moeda(r) "<br>";
         v = r;
     }
-    document.write("Resultado: " + moeda(r));
-}
+    document.getElementById("total").innerHTML = moeda(r);
+   // document.write("Resultado: " + moeda(r));
 
 function média
     let n1 = document.getElementById("b1").value;
